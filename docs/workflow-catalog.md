@@ -1,131 +1,122 @@
 # OmniServe AI Workflow Catalog
 
-OmniServe is designed as 100 connected automations grouped into six departments. Every workflow should read from or write to the shared Supabase Customer 360 and escalate high-risk decisions to a human.
+All 100 workflow definitions are built and importable. Workflow 001 has owner-confirmed runtime testing; workflows 002-100 are built and require credential/runtime validation in the destination n8n instance.
 
-**Implementation status:** 1 implemented and tested, 5 built pending credential/runtime validation, 94 planned.
+Legend: ✅ runtime-tested · 🟠 built, pending runtime validation
 
-Legend: ✅ implemented and tested · 🟠 built, pending validation · 🟡 planned
+## Customer Operations — 25 workflows
 
-## 1. Customer Operations — 25 workflows
+1. ✅ [Omnichannel Intake](../n8n-workflows/customer-operations/01-customer-intake.json)
+2. 🟠 [Identity Matching](../n8n-workflows/customer-operations/02-identity-matching.json)
+3. 🟠 [Customer 360 Update](../n8n-workflows/customer-operations/03-customer-360-update.json)
+4. 🟠 [Intent Classification](../n8n-workflows/customer-operations/04-intent-classification.json)
+5. 🟠 [Priority Scoring](../n8n-workflows/customer-operations/05-priority-scoring.json)
+6. 🟠 [Sentiment Detection](../n8n-workflows/customer-operations/06-sentiment-detection.json)
+7. 🟠 [SLA Assignment](../n8n-workflows/customer-operations/07-sla-assignment.json)
+8. 🟠 [Case Creation](../n8n-workflows/customer-operations/08-case-creation.json)
+9. 🟠 [Duplicate Detection](../n8n-workflows/customer-operations/09-duplicate-detection.json)
+10. 🟠 [Department Routing](../n8n-workflows/customer-operations/10-department-routing.json)
+11. 🟠 [AI Response Draft](../n8n-workflows/customer-operations/11-ai-response-draft.json)
+12. 🟠 [Knowledge Retrieval](../n8n-workflows/customer-operations/12-knowledge-retrieval.json)
+13. 🟠 [Human Escalation](../n8n-workflows/customer-operations/13-human-escalation.json)
+14. 🟠 [Agent Assignment](../n8n-workflows/customer-operations/14-agent-assignment.json)
+15. 🟠 [Instant Acknowledgment](../n8n-workflows/customer-operations/15-instant-acknowledgment.json)
+16. 🟠 [Follow-Up Scheduling](../n8n-workflows/customer-operations/16-follow-up-scheduling.json)
+17. 🟠 [Inactivity Reminder](../n8n-workflows/customer-operations/17-inactivity-reminder.json)
+18. 🟠 [Status Notification](../n8n-workflows/customer-operations/18-status-notification.json)
+19. 🟠 [Resolution Confirmation](../n8n-workflows/customer-operations/19-resolution-confirmation.json)
+20. 🟠 [Satisfaction Survey](../n8n-workflows/customer-operations/20-satisfaction-survey.json)
+21. 🟠 [Complaint Management](../n8n-workflows/customer-operations/21-complaint-management.json)
+22. 🟠 [VIP Customer Handling](../n8n-workflows/customer-operations/22-vip-customer-handling.json)
+23. 🟠 [Churn-Risk Alert](../n8n-workflows/customer-operations/23-churn-risk-alert.json)
+24. 🟠 [Case Reopening](../n8n-workflows/customer-operations/24-case-reopening.json)
+25. 🟠 [Interaction Timeline](../n8n-workflows/customer-operations/25-interaction-timeline.json)
+## Sales & Growth — 20 workflows
 
-1. ✅ Omnichannel Intake
-2. 🟠 Identity Matching
-3. 🟠 Customer 360 Update
-4. 🟠 Intent Classification
-5. 🟠 Priority Scoring
-6. 🟠 Sentiment Detection
-7. 🟡 SLA Assignment
-8. 🟡 Case Creation
-9. 🟡 Duplicate Detection
-10. 🟡 Department Routing
-11. 🟡 AI Response Draft
-12. 🟡 Knowledge Retrieval
-13. 🟡 Human Escalation
-14. 🟡 Agent Assignment
-15. 🟡 Instant Acknowledgment
-16. 🟡 Follow-Up Scheduling
-17. 🟡 Inactivity Reminder
-18. 🟡 Status Notification
-19. 🟡 Resolution Confirmation
-20. 🟡 Satisfaction Survey
-21. 🟡 Complaint Management
-22. 🟡 VIP Customer Handling
-23. 🟡 Churn-Risk Alert
-24. 🟡 Case Reopening
-25. 🟡 Interaction Timeline
+1. 🟠 [Lead Capture](../n8n-workflows/sales-growth/01-lead-capture.json)
+2. 🟠 [Lead Enrichment](../n8n-workflows/sales-growth/02-lead-enrichment.json)
+3. 🟠 [AI Lead Qualification](../n8n-workflows/sales-growth/03-ai-lead-qualification.json)
+4. 🟠 [Lead Scoring](../n8n-workflows/sales-growth/04-lead-scoring.json)
+5. 🟠 [Sales Representative Assignment](../n8n-workflows/sales-growth/05-sales-representative-assignment.json)
+6. 🟠 [Instant Lead Response](../n8n-workflows/sales-growth/06-instant-lead-response.json)
+7. 🟠 [Personalized Sales Sequence](../n8n-workflows/sales-growth/07-personalized-sales-sequence.json)
+8. 🟠 [Meeting Booking](../n8n-workflows/sales-growth/08-meeting-booking.json)
+9. 🟠 [Meeting Reminder](../n8n-workflows/sales-growth/09-meeting-reminder.json)
+10. 🟠 [No-Show Recovery](../n8n-workflows/sales-growth/10-no-show-recovery.json)
+11. 🟠 [Quote Generation](../n8n-workflows/sales-growth/11-quote-generation.json)
+12. 🟠 [Proposal Generation](../n8n-workflows/sales-growth/12-proposal-generation.json)
+13. 🟠 [Discount Approval](../n8n-workflows/sales-growth/13-discount-approval.json)
+14. 🟠 [Proposal Follow-Up](../n8n-workflows/sales-growth/14-proposal-follow-up.json)
+15. 🟠 [CRM Pipeline Update](../n8n-workflows/sales-growth/15-crm-pipeline-update.json)
+16. 🟠 [Dormant Lead Reactivation](../n8n-workflows/sales-growth/16-dormant-lead-reactivation.json)
+17. 🟠 [Upsell Recommendation](../n8n-workflows/sales-growth/17-upsell-recommendation.json)
+18. 🟠 [Cross-Sell Recommendation](../n8n-workflows/sales-growth/18-cross-sell-recommendation.json)
+19. 🟠 [Referral Program](../n8n-workflows/sales-growth/19-referral-program.json)
+20. 🟠 [Sales Forecasting](../n8n-workflows/sales-growth/20-sales-forecasting.json)
+## Service Delivery — 20 workflows
 
-## 2. Sales and Growth — 20 workflows
+1. 🟠 [Service Request Intake](../n8n-workflows/service-delivery/01-service-request-intake.json)
+2. 🟠 [Customer Onboarding](../n8n-workflows/service-delivery/02-customer-onboarding.json)
+3. 🟠 [Work Order Creation](../n8n-workflows/service-delivery/03-work-order-creation.json)
+4. 🟠 [AI Task Breakdown](../n8n-workflows/service-delivery/04-ai-task-breakdown.json)
+5. 🟠 [Team Assignment](../n8n-workflows/service-delivery/05-team-assignment.json)
+6. 🟠 [Capacity Checking](../n8n-workflows/service-delivery/06-capacity-checking.json)
+7. 🟠 [Service Scheduling](../n8n-workflows/service-delivery/07-service-scheduling.json)
+8. 🟠 [Document Collection](../n8n-workflows/service-delivery/08-document-collection.json)
+9. 🟠 [Milestone Tracking](../n8n-workflows/service-delivery/09-milestone-tracking.json)
+10. 🟠 [Dependency Alerting](../n8n-workflows/service-delivery/10-dependency-alerting.json)
+11. 🟠 [Department Handoff](../n8n-workflows/service-delivery/11-department-handoff.json)
+12. 🟠 [Pre-Delivery Quality Check](../n8n-workflows/service-delivery/12-pre-delivery-quality-check.json)
+13. 🟠 [Delivery Confirmation](../n8n-workflows/service-delivery/13-delivery-confirmation.json)
+14. 🟠 [Change-Request Management](../n8n-workflows/service-delivery/14-change-request-management.json)
+15. 🟠 [Incident Management](../n8n-workflows/service-delivery/15-incident-management.json)
+16. 🟠 [Maintenance Scheduling](../n8n-workflows/service-delivery/16-maintenance-scheduling.json)
+17. 🟠 [Renewal Preparation](../n8n-workflows/service-delivery/17-renewal-preparation.json)
+18. 🟠 [Vendor Coordination](../n8n-workflows/service-delivery/18-vendor-coordination.json)
+19. 🟠 [Delivery SLA Monitoring](../n8n-workflows/service-delivery/19-delivery-sla-monitoring.json)
+20. 🟠 [Post-Delivery Review](../n8n-workflows/service-delivery/20-post-delivery-review.json)
+## Finance & Administration — 15 workflows
 
-1. 🟡 Lead Capture
-2. 🟡 Lead Enrichment
-3. 🟡 AI Lead Qualification
-4. 🟡 Lead Scoring
-5. 🟡 Sales Representative Assignment
-6. 🟡 Instant Lead Response
-7. 🟡 Personalized Sales Sequence
-8. 🟡 Meeting Booking
-9. 🟡 Meeting Reminder
-10. 🟡 No-Show Recovery
-11. 🟡 Quote Generation
-12. 🟡 Proposal Generation
-13. 🟡 Discount Approval
-14. 🟡 Proposal Follow-Up
-15. 🟡 CRM Pipeline Update
-16. 🟡 Dormant Lead Reactivation
-17. 🟡 Upsell Recommendation
-18. 🟡 Cross-Sell Recommendation
-19. 🟡 Referral Program
-20. 🟡 Sales Forecasting
+1. 🟠 [Invoice Generation](../n8n-workflows/finance-admin/01-invoice-generation.json)
+2. 🟠 [Payment-Link Delivery](../n8n-workflows/finance-admin/02-payment-link-delivery.json)
+3. 🟠 [Payment Confirmation](../n8n-workflows/finance-admin/03-payment-confirmation.json)
+4. 🟠 [Overdue Invoice Detection](../n8n-workflows/finance-admin/04-overdue-invoice-detection.json)
+5. 🟠 [Payment Reminders](../n8n-workflows/finance-admin/05-payment-reminders.json)
+6. 🟠 [Refund Request Processing](../n8n-workflows/finance-admin/06-refund-request-processing.json)
+7. 🟠 [Refund Approval Routing](../n8n-workflows/finance-admin/07-refund-approval-routing.json)
+8. 🟠 [Payment Reconciliation](../n8n-workflows/finance-admin/08-payment-reconciliation.json)
+9. 🟠 [Expense Capture](../n8n-workflows/finance-admin/09-expense-capture.json)
+10. 🟠 [Expense Approval](../n8n-workflows/finance-admin/10-expense-approval.json)
+11. 🟠 [Recurring Billing](../n8n-workflows/finance-admin/11-recurring-billing.json)
+12. 🟠 [Credit-Note Generation](../n8n-workflows/finance-admin/12-credit-note-generation.json)
+13. 🟠 [Tax Document Preparation](../n8n-workflows/finance-admin/13-tax-document-preparation.json)
+14. 🟠 [Contract Renewal](../n8n-workflows/finance-admin/14-contract-renewal.json)
+15. 🟠 [Daily Financial Summary](../n8n-workflows/finance-admin/15-daily-financial-summary.json)
+## Data & Intelligence — 10 workflows
 
-## 3. Service Delivery — 20 workflows
+1. 🟠 [Central Event Collection](../n8n-workflows/data-intelligence/01-central-event-collection.json)
+2. 🟠 [Data Validation](../n8n-workflows/data-intelligence/02-data-validation.json)
+3. 🟠 [Duplicate Data Cleanup](../n8n-workflows/data-intelligence/03-duplicate-data-cleanup.json)
+4. 🟠 [Unified Customer Profile](../n8n-workflows/data-intelligence/04-unified-customer-profile.json)
+5. 🟠 [KPI Dashboard Updates](../n8n-workflows/data-intelligence/05-kpi-dashboard-updates.json)
+6. 🟠 [Demand Forecasting](../n8n-workflows/data-intelligence/06-demand-forecasting.json)
+7. 🟠 [Anomaly Detection](../n8n-workflows/data-intelligence/07-anomaly-detection.json)
+8. 🟠 [Customer Segmentation](../n8n-workflows/data-intelligence/08-customer-segmentation.json)
+9. 🟠 [Conversation Trend Analysis](../n8n-workflows/data-intelligence/09-conversation-trend-analysis.json)
+10. 🟠 [Executive AI Report](../n8n-workflows/data-intelligence/10-executive-ai-report.json)
+## QA, Risk & Governance — 10 workflows
 
-1. 🟡 Service Request Intake
-2. 🟡 Customer Onboarding
-3. 🟡 Work Order Creation
-4. 🟡 AI Task Breakdown
-5. 🟡 Team Assignment
-6. 🟡 Capacity Checking
-7. 🟡 Service Scheduling
-8. 🟡 Document Collection
-9. 🟡 Milestone Tracking
-10. 🟡 Dependency Alerting
-11. 🟡 Department Handoff
-12. 🟡 Pre-Delivery Quality Check
-13. 🟡 Delivery Confirmation
-14. 🟡 Change-Request Management
-15. 🟡 Incident Management
-16. 🟡 Maintenance Scheduling
-17. 🟡 Renewal Preparation
-18. 🟡 Vendor Coordination
-19. 🟡 Delivery SLA Monitoring
-20. 🟡 Post-Delivery Review
-
-## 4. Finance and Administration — 15 workflows
-
-1. 🟡 Invoice Generation
-2. 🟡 Payment-Link Delivery
-3. 🟡 Payment Confirmation
-4. 🟡 Overdue Invoice Detection
-5. 🟡 Payment Reminders
-6. 🟡 Refund Request Processing
-7. 🟡 Refund Approval Routing
-8. 🟡 Payment Reconciliation
-9. 🟡 Expense Capture
-10. 🟡 Expense Approval
-11. 🟡 Recurring Billing
-12. 🟡 Credit-Note Generation
-13. 🟡 Tax Document Preparation
-14. 🟡 Contract Renewal
-15. 🟡 Daily Financial Summary
-
-## 5. Data and Intelligence — 10 workflows
-
-1. 🟡 Central Event Collection
-2. 🟡 Data Validation
-3. 🟡 Duplicate Data Cleanup
-4. 🟡 Unified Customer Profile
-5. 🟡 KPI Dashboard Updates
-6. 🟡 Demand Forecasting
-7. 🟡 Anomaly Detection
-8. 🟡 Customer Segmentation
-9. 🟡 Conversation Trend Analysis
-10. 🟡 Executive AI Report
-
-## 6. QA, Risk and Governance — 10 workflows
-
-1. 🟡 AI Confidence Gate
-2. 🟡 Human Approval Control
-3. 🟡 PII Detection and Redaction
-4. 🟡 Customer Consent Tracking
-5. 🟡 Role-Based Access Control
-6. 🟡 Complete Audit Logging
-7. 🟡 Policy Compliance Check
-8. 🟡 Fraud and Abuse Detection
-9. 🟡 Interaction Quality Scoring
-10. 🟡 Security Incident and Data Retention
+1. 🟠 [AI Confidence Gate](../n8n-workflows/qa-risk-governance/01-ai-confidence-gate.json)
+2. 🟠 [Human Approval Control](../n8n-workflows/qa-risk-governance/02-human-approval-control.json)
+3. 🟠 [PII Detection & Redaction](../n8n-workflows/qa-risk-governance/03-pii-detection-and-redaction.json)
+4. 🟠 [Customer Consent Tracking](../n8n-workflows/qa-risk-governance/04-customer-consent-tracking.json)
+5. 🟠 [Role-Based Access Control](../n8n-workflows/qa-risk-governance/05-role-based-access-control.json)
+6. 🟠 [Complete Audit Logging](../n8n-workflows/qa-risk-governance/06-complete-audit-logging.json)
+7. 🟠 [Policy Compliance Check](../n8n-workflows/qa-risk-governance/07-policy-compliance-check.json)
+8. 🟠 [Fraud & Abuse Detection](../n8n-workflows/qa-risk-governance/08-fraud-and-abuse-detection.json)
+9. 🟠 [Interaction Quality Scoring](../n8n-workflows/qa-risk-governance/09-interaction-quality-scoring.json)
+10. 🟠 [Security Incident & Data Retention](../n8n-workflows/qa-risk-governance/10-security-incident-and-data-retention.json)
 
 ## Shared operating loop
 
-Intake → Understand → Route → Act → Respond → Learn
-
-The production system will use reusable sub-workflows for authentication, Customer 360 access, audit logging, error handling, human approval and notifications.
+Intake → Understand → Route → Risk gate → Act or approve → Respond → Audit → Learn

@@ -1,49 +1,24 @@
-# n8n Credential Map
+# Credential Map
 
-OmniServe workflows reference credentials by purpose. Secret values must be stored in n8n Credentials and must never be committed to GitHub.
+Do not paste real keys into workflow JSON, GitHub, screenshots, issues, or chat messages.
 
-## Credentials required now
+## Required for the shared core
 
-| n8n credential name | Credential type | Used by | Required value |
+| n8n credential | Type | Value | Used by |
 |---|---|---|---|
-| Supabase Service Role | Header Auth | Customer intake, identity matching, Customer 360 update | Header name `apikey`; value is the Supabase secret/service-role key |
-| OpenAI API | Header Auth | Intent classification, priority scoring, sentiment detection | Header name `Authorization`; value is `Bearer YOUR_OPENAI_API_KEY` |
+| OmniServe Supabase Service Role | Header Auth | Name `apikey`; value is the Supabase secret/service-role key | Customer 360, event persistence, approvals, audit |
+| OmniServe OpenAI | Header Auth | Name `Authorization`; value `Bearer YOUR_OPENAI_API_KEY` | AI workflows 004-006 and future AI action nodes |
 
-Restrict the Supabase credential to:
+## Channel credentials added during runtime rollout
 
-`https://rjudsonxkaohbqhxmvvw.supabase.co`
-
-Restrict the OpenAI credential to:
-
-`https://api.openai.com`
-
-## Credentials planned for later departments
-
-| n8n credential name | Credential type | Primary workflows |
+| Credential | Typical n8n type | Purpose |
 |---|---|---|
-| Gmail OAuth2 | Gmail OAuth2 | Acknowledgments, follow-ups, invoices and notifications |
-| Twilio Account | Twilio | SMS, voice intake and urgent alerts |
-| Slack Workspace | Slack OAuth2 | Human approvals, escalations and operational alerts |
-| Notion Knowledge Base | Notion API | Knowledge retrieval, procedures and internal documentation |
-| Stripe Account | Stripe API | Payment links, refunds, recurring billing and reconciliation |
-| Analytics Destination | Provider-specific | KPI dashboards, forecasts and executive reports |
-| CRM Connection | Provider-specific | Lead pipeline, ownership, opportunities and sales activity |
+| Gmail or Microsoft 365 | OAuth2 | Email intake and replies |
+| Twilio | Twilio API | Voice and SMS |
+| Slack | Slack OAuth2 | Internal alerts and approvals |
+| Notion | Notion API | Knowledge and operating pages |
+| Stripe | Stripe API | Payments, invoices, refunds |
+| CRM | Provider OAuth/API | Leads, opportunities, pipeline |
+| Analytics | Provider OAuth/API | Dashboards and reporting |
 
-## Security rules
-
-1. Never paste API keys into Code nodes, Set nodes, workflow JSON or GitHub.
-2. Use separate development and production credentials.
-3. Restrict HTTP credentials to the required domains.
-4. Use Supabase service-role credentials only in server-side n8n workflows.
-5. Rotate any credential immediately if it appears in a screenshot or commit.
-6. Require human approval for refunds, discounts, payments, access changes and security actions.
-7. Keep imported workflows inactive until credentials and test executions pass.
-
-## Workflow status
-
-- Customer Intake: implemented and previously tested
-- Identity Matching: built; requires Supabase credential and runtime test
-- Customer 360 Update: built; requires Supabase credential and runtime test
-- Intent Classification: built; requires OpenAI credential and runtime test
-- Priority Scoring: built; requires OpenAI credential and runtime test
-- Sentiment Detection: built; requires OpenAI credential and runtime test
+Generated workflows 007-100 use the shared Supabase RPC and import without embedded credentials. Attach provider credentials only when replacing a placeholder department action with a real external action.

@@ -1,0 +1,141 @@
+{
+  "name": "OmniServe 068 - Payment Confirmation",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "omniserve-payment-confirmation",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "os68-01",
+      "name": "Workflow Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -720,
+        0
+      ],
+      "webhookId": "omniserve-payment-confirmation"
+    },
+    {
+      "parameters": {
+        "jsCode": "const body = $json.body ?? $json;\nconst cfg = {\"workflowKey\":\"068-payment-confirmation\",\"department\":\"Finance & Administration\",\"operation\":\"Payment Confirmation\",\"riskLevel\":\"MEDIUM\",\"defaultApproval\":false};\nif (!body || typeof body !== 'object' || Array.isArray(body)) throw new Error('A JSON object is required');\nconst correlationId = String(body.correlationId ?? body.correlation_id ?? $execution.id);\nconst subjectType = String(body.subjectType ?? body.subject_type ?? 'customer');\nconst subjectId = String(body.subjectId ?? body.subject_id ?? body.customerId ?? body.caseId ?? correlationId);\nconst amount = Number(body.amount ?? 0);\nconst confidence = Math.max(0, Math.min(1, Number(body.confidence ?? 1)));\nconst requiresHumanApproval = cfg.defaultApproval || amount >= 1000 || confidence < 0.7 || body.forceHumanReview === true;\nconst status = requiresHumanApproval ? 'AWAITING_APPROVAL' : 'READY';\nreturn [{json:{correlationId,workflowKey:cfg.workflowKey,department:cfg.department,operation:cfg.operation,subjectType,subjectId,riskLevel:cfg.riskLevel,confidence,requiresHumanApproval,status,input:body,result:{accepted:true,nextStep:requiresHumanApproval?'HUMAN_APPROVAL':'DEPARTMENT_ACTION'},receivedAt:new Date().toISOString()}}];"
+      },
+      "id": "os68-02",
+      "name": "Validate and Apply Policy",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -420,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Finance & Administration workflow 68/100. Risk: MEDIUM."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://rjudsonxkaohbqhxmvvw.supabase.co/rest/v1/rpc/process_automation_event",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({ p_correlation_id: $json.correlationId, p_workflow_key: $json.workflowKey, p_department: $json.department, p_operation: $json.operation, p_subject_type: $json.subjectType, p_subject_id: $json.subjectId, p_risk_level: $json.riskLevel, p_confidence: $json.confidence, p_requires_human_approval: $json.requiresHumanApproval, p_input: $json.input, p_result: $json.result }) }}",
+        "options": {}
+      },
+      "id": "os68-03",
+      "name": "Persist Event and Audit",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -100,
+        0
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 1000,
+      "notesInFlow": true,
+      "notes": "Select the Supabase service-role Header Auth credential."
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { success: true, workflow: '068-payment-confirmation', data: $json } }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "os68-04",
+      "name": "Return Workflow Result",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        230,
+        0
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Workflow Webhook": {
+      "main": [
+        [
+          {
+            "node": "Validate and Apply Policy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate and Apply Policy": {
+      "main": [
+        [
+          {
+            "node": "Persist Event and Audit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Persist Event and Audit": {
+      "main": [
+        [
+          {
+            "node": "Return Workflow Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "omniserve": {
+      "globalIndex": 68,
+      "department": "finance-admin",
+      "riskLevel": "MEDIUM",
+      "requiresHumanApprovalByDefault": false
+    }
+  },
+  "tags": []
+}

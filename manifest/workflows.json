@@ -1,0 +1,902 @@
+[
+  {
+    "globalIndex": 1,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 1,
+    "name": "Omnichannel Intake",
+    "slug": "omnichannel-intake",
+    "path": "n8n-workflows/customer-operations/01-customer-intake.json"
+  },
+  {
+    "globalIndex": 2,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 2,
+    "name": "Identity Matching",
+    "slug": "identity-matching",
+    "path": "n8n-workflows/customer-operations/02-identity-matching.json"
+  },
+  {
+    "globalIndex": 3,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 3,
+    "name": "Customer 360 Update",
+    "slug": "customer-360-update",
+    "path": "n8n-workflows/customer-operations/03-customer-360-update.json"
+  },
+  {
+    "globalIndex": 4,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 4,
+    "name": "Intent Classification",
+    "slug": "intent-classification",
+    "path": "n8n-workflows/customer-operations/04-intent-classification.json"
+  },
+  {
+    "globalIndex": 5,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 5,
+    "name": "Priority Scoring",
+    "slug": "priority-scoring",
+    "path": "n8n-workflows/customer-operations/05-priority-scoring.json"
+  },
+  {
+    "globalIndex": 6,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 6,
+    "name": "Sentiment Detection",
+    "slug": "sentiment-detection",
+    "path": "n8n-workflows/customer-operations/06-sentiment-detection.json"
+  },
+  {
+    "globalIndex": 7,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 7,
+    "name": "SLA Assignment",
+    "slug": "sla-assignment",
+    "path": "n8n-workflows/customer-operations/07-sla-assignment.json"
+  },
+  {
+    "globalIndex": 8,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 8,
+    "name": "Case Creation",
+    "slug": "case-creation",
+    "path": "n8n-workflows/customer-operations/08-case-creation.json"
+  },
+  {
+    "globalIndex": 9,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 9,
+    "name": "Duplicate Detection",
+    "slug": "duplicate-detection",
+    "path": "n8n-workflows/customer-operations/09-duplicate-detection.json"
+  },
+  {
+    "globalIndex": 10,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 10,
+    "name": "Department Routing",
+    "slug": "department-routing",
+    "path": "n8n-workflows/customer-operations/10-department-routing.json"
+  },
+  {
+    "globalIndex": 11,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 11,
+    "name": "AI Response Draft",
+    "slug": "ai-response-draft",
+    "path": "n8n-workflows/customer-operations/11-ai-response-draft.json"
+  },
+  {
+    "globalIndex": 12,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 12,
+    "name": "Knowledge Retrieval",
+    "slug": "knowledge-retrieval",
+    "path": "n8n-workflows/customer-operations/12-knowledge-retrieval.json"
+  },
+  {
+    "globalIndex": 13,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 13,
+    "name": "Human Escalation",
+    "slug": "human-escalation",
+    "path": "n8n-workflows/customer-operations/13-human-escalation.json"
+  },
+  {
+    "globalIndex": 14,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 14,
+    "name": "Agent Assignment",
+    "slug": "agent-assignment",
+    "path": "n8n-workflows/customer-operations/14-agent-assignment.json"
+  },
+  {
+    "globalIndex": 15,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 15,
+    "name": "Instant Acknowledgment",
+    "slug": "instant-acknowledgment",
+    "path": "n8n-workflows/customer-operations/15-instant-acknowledgment.json"
+  },
+  {
+    "globalIndex": 16,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 16,
+    "name": "Follow-Up Scheduling",
+    "slug": "follow-up-scheduling",
+    "path": "n8n-workflows/customer-operations/16-follow-up-scheduling.json"
+  },
+  {
+    "globalIndex": 17,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 17,
+    "name": "Inactivity Reminder",
+    "slug": "inactivity-reminder",
+    "path": "n8n-workflows/customer-operations/17-inactivity-reminder.json"
+  },
+  {
+    "globalIndex": 18,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 18,
+    "name": "Status Notification",
+    "slug": "status-notification",
+    "path": "n8n-workflows/customer-operations/18-status-notification.json"
+  },
+  {
+    "globalIndex": 19,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 19,
+    "name": "Resolution Confirmation",
+    "slug": "resolution-confirmation",
+    "path": "n8n-workflows/customer-operations/19-resolution-confirmation.json"
+  },
+  {
+    "globalIndex": 20,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 20,
+    "name": "Satisfaction Survey",
+    "slug": "satisfaction-survey",
+    "path": "n8n-workflows/customer-operations/20-satisfaction-survey.json"
+  },
+  {
+    "globalIndex": 21,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 21,
+    "name": "Complaint Management",
+    "slug": "complaint-management",
+    "path": "n8n-workflows/customer-operations/21-complaint-management.json"
+  },
+  {
+    "globalIndex": 22,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 22,
+    "name": "VIP Customer Handling",
+    "slug": "vip-customer-handling",
+    "path": "n8n-workflows/customer-operations/22-vip-customer-handling.json"
+  },
+  {
+    "globalIndex": 23,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 23,
+    "name": "Churn-Risk Alert",
+    "slug": "churn-risk-alert",
+    "path": "n8n-workflows/customer-operations/23-churn-risk-alert.json"
+  },
+  {
+    "globalIndex": 24,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 24,
+    "name": "Case Reopening",
+    "slug": "case-reopening",
+    "path": "n8n-workflows/customer-operations/24-case-reopening.json"
+  },
+  {
+    "globalIndex": 25,
+    "department": "Customer Operations",
+    "departmentKey": "customer-operations",
+    "localIndex": 25,
+    "name": "Interaction Timeline",
+    "slug": "interaction-timeline",
+    "path": "n8n-workflows/customer-operations/25-interaction-timeline.json"
+  },
+  {
+    "globalIndex": 26,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 1,
+    "name": "Lead Capture",
+    "slug": "lead-capture",
+    "path": "n8n-workflows/sales-growth/01-lead-capture.json"
+  },
+  {
+    "globalIndex": 27,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 2,
+    "name": "Lead Enrichment",
+    "slug": "lead-enrichment",
+    "path": "n8n-workflows/sales-growth/02-lead-enrichment.json"
+  },
+  {
+    "globalIndex": 28,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 3,
+    "name": "AI Lead Qualification",
+    "slug": "ai-lead-qualification",
+    "path": "n8n-workflows/sales-growth/03-ai-lead-qualification.json"
+  },
+  {
+    "globalIndex": 29,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 4,
+    "name": "Lead Scoring",
+    "slug": "lead-scoring",
+    "path": "n8n-workflows/sales-growth/04-lead-scoring.json"
+  },
+  {
+    "globalIndex": 30,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 5,
+    "name": "Sales Representative Assignment",
+    "slug": "sales-representative-assignment",
+    "path": "n8n-workflows/sales-growth/05-sales-representative-assignment.json"
+  },
+  {
+    "globalIndex": 31,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 6,
+    "name": "Instant Lead Response",
+    "slug": "instant-lead-response",
+    "path": "n8n-workflows/sales-growth/06-instant-lead-response.json"
+  },
+  {
+    "globalIndex": 32,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 7,
+    "name": "Personalized Sales Sequence",
+    "slug": "personalized-sales-sequence",
+    "path": "n8n-workflows/sales-growth/07-personalized-sales-sequence.json"
+  },
+  {
+    "globalIndex": 33,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 8,
+    "name": "Meeting Booking",
+    "slug": "meeting-booking",
+    "path": "n8n-workflows/sales-growth/08-meeting-booking.json"
+  },
+  {
+    "globalIndex": 34,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 9,
+    "name": "Meeting Reminder",
+    "slug": "meeting-reminder",
+    "path": "n8n-workflows/sales-growth/09-meeting-reminder.json"
+  },
+  {
+    "globalIndex": 35,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 10,
+    "name": "No-Show Recovery",
+    "slug": "no-show-recovery",
+    "path": "n8n-workflows/sales-growth/10-no-show-recovery.json"
+  },
+  {
+    "globalIndex": 36,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 11,
+    "name": "Quote Generation",
+    "slug": "quote-generation",
+    "path": "n8n-workflows/sales-growth/11-quote-generation.json"
+  },
+  {
+    "globalIndex": 37,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 12,
+    "name": "Proposal Generation",
+    "slug": "proposal-generation",
+    "path": "n8n-workflows/sales-growth/12-proposal-generation.json"
+  },
+  {
+    "globalIndex": 38,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 13,
+    "name": "Discount Approval",
+    "slug": "discount-approval",
+    "path": "n8n-workflows/sales-growth/13-discount-approval.json"
+  },
+  {
+    "globalIndex": 39,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 14,
+    "name": "Proposal Follow-Up",
+    "slug": "proposal-follow-up",
+    "path": "n8n-workflows/sales-growth/14-proposal-follow-up.json"
+  },
+  {
+    "globalIndex": 40,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 15,
+    "name": "CRM Pipeline Update",
+    "slug": "crm-pipeline-update",
+    "path": "n8n-workflows/sales-growth/15-crm-pipeline-update.json"
+  },
+  {
+    "globalIndex": 41,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 16,
+    "name": "Dormant Lead Reactivation",
+    "slug": "dormant-lead-reactivation",
+    "path": "n8n-workflows/sales-growth/16-dormant-lead-reactivation.json"
+  },
+  {
+    "globalIndex": 42,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 17,
+    "name": "Upsell Recommendation",
+    "slug": "upsell-recommendation",
+    "path": "n8n-workflows/sales-growth/17-upsell-recommendation.json"
+  },
+  {
+    "globalIndex": 43,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 18,
+    "name": "Cross-Sell Recommendation",
+    "slug": "cross-sell-recommendation",
+    "path": "n8n-workflows/sales-growth/18-cross-sell-recommendation.json"
+  },
+  {
+    "globalIndex": 44,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 19,
+    "name": "Referral Program",
+    "slug": "referral-program",
+    "path": "n8n-workflows/sales-growth/19-referral-program.json"
+  },
+  {
+    "globalIndex": 45,
+    "department": "Sales & Growth",
+    "departmentKey": "sales-growth",
+    "localIndex": 20,
+    "name": "Sales Forecasting",
+    "slug": "sales-forecasting",
+    "path": "n8n-workflows/sales-growth/20-sales-forecasting.json"
+  },
+  {
+    "globalIndex": 46,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 1,
+    "name": "Service Request Intake",
+    "slug": "service-request-intake",
+    "path": "n8n-workflows/service-delivery/01-service-request-intake.json"
+  },
+  {
+    "globalIndex": 47,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 2,
+    "name": "Customer Onboarding",
+    "slug": "customer-onboarding",
+    "path": "n8n-workflows/service-delivery/02-customer-onboarding.json"
+  },
+  {
+    "globalIndex": 48,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 3,
+    "name": "Work Order Creation",
+    "slug": "work-order-creation",
+    "path": "n8n-workflows/service-delivery/03-work-order-creation.json"
+  },
+  {
+    "globalIndex": 49,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 4,
+    "name": "AI Task Breakdown",
+    "slug": "ai-task-breakdown",
+    "path": "n8n-workflows/service-delivery/04-ai-task-breakdown.json"
+  },
+  {
+    "globalIndex": 50,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 5,
+    "name": "Team Assignment",
+    "slug": "team-assignment",
+    "path": "n8n-workflows/service-delivery/05-team-assignment.json"
+  },
+  {
+    "globalIndex": 51,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 6,
+    "name": "Capacity Checking",
+    "slug": "capacity-checking",
+    "path": "n8n-workflows/service-delivery/06-capacity-checking.json"
+  },
+  {
+    "globalIndex": 52,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 7,
+    "name": "Service Scheduling",
+    "slug": "service-scheduling",
+    "path": "n8n-workflows/service-delivery/07-service-scheduling.json"
+  },
+  {
+    "globalIndex": 53,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 8,
+    "name": "Document Collection",
+    "slug": "document-collection",
+    "path": "n8n-workflows/service-delivery/08-document-collection.json"
+  },
+  {
+    "globalIndex": 54,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 9,
+    "name": "Milestone Tracking",
+    "slug": "milestone-tracking",
+    "path": "n8n-workflows/service-delivery/09-milestone-tracking.json"
+  },
+  {
+    "globalIndex": 55,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 10,
+    "name": "Dependency Alerting",
+    "slug": "dependency-alerting",
+    "path": "n8n-workflows/service-delivery/10-dependency-alerting.json"
+  },
+  {
+    "globalIndex": 56,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 11,
+    "name": "Department Handoff",
+    "slug": "department-handoff",
+    "path": "n8n-workflows/service-delivery/11-department-handoff.json"
+  },
+  {
+    "globalIndex": 57,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 12,
+    "name": "Pre-Delivery Quality Check",
+    "slug": "pre-delivery-quality-check",
+    "path": "n8n-workflows/service-delivery/12-pre-delivery-quality-check.json"
+  },
+  {
+    "globalIndex": 58,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 13,
+    "name": "Delivery Confirmation",
+    "slug": "delivery-confirmation",
+    "path": "n8n-workflows/service-delivery/13-delivery-confirmation.json"
+  },
+  {
+    "globalIndex": 59,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 14,
+    "name": "Change-Request Management",
+    "slug": "change-request-management",
+    "path": "n8n-workflows/service-delivery/14-change-request-management.json"
+  },
+  {
+    "globalIndex": 60,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 15,
+    "name": "Incident Management",
+    "slug": "incident-management",
+    "path": "n8n-workflows/service-delivery/15-incident-management.json"
+  },
+  {
+    "globalIndex": 61,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 16,
+    "name": "Maintenance Scheduling",
+    "slug": "maintenance-scheduling",
+    "path": "n8n-workflows/service-delivery/16-maintenance-scheduling.json"
+  },
+  {
+    "globalIndex": 62,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 17,
+    "name": "Renewal Preparation",
+    "slug": "renewal-preparation",
+    "path": "n8n-workflows/service-delivery/17-renewal-preparation.json"
+  },
+  {
+    "globalIndex": 63,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 18,
+    "name": "Vendor Coordination",
+    "slug": "vendor-coordination",
+    "path": "n8n-workflows/service-delivery/18-vendor-coordination.json"
+  },
+  {
+    "globalIndex": 64,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 19,
+    "name": "Delivery SLA Monitoring",
+    "slug": "delivery-sla-monitoring",
+    "path": "n8n-workflows/service-delivery/19-delivery-sla-monitoring.json"
+  },
+  {
+    "globalIndex": 65,
+    "department": "Service Delivery",
+    "departmentKey": "service-delivery",
+    "localIndex": 20,
+    "name": "Post-Delivery Review",
+    "slug": "post-delivery-review",
+    "path": "n8n-workflows/service-delivery/20-post-delivery-review.json"
+  },
+  {
+    "globalIndex": 66,
+    "department": "Finance & Administration",
+    "departmentKey": "finance-admin",
+    "localIndex": 1,
+    "name": "Invoice Generation",
+    "slug": "invoice-generation",
+    "path": "n8n-workflows/finance-admin/01-invoice-generation.json"
+  },
+  {
+    "globalIndex": 67,
+    "department": "Finance & Administration",
+    "departmentKey": "finance-admin",
+    "localIndex": 2,
+    "name": "Payment-Link Delivery",
+    "slug": "payment-link-delivery",
+    "path": "n8n-workflows/finance-admin/02-payment-link-delivery.json"
+  },
+  {
+    "globalIndex": 68,
+    "department": "Finance & Administration",
+    "departmentKey": "finance-admin",
+    "localIndex": 3,
+    "name": "Payment Confirmation",
+    "slug": "payment-confirmation",
+    "path": "n8n-workflows/finance-admin/03-payment-confirmation.json"
+  },
+  {
+    "globalIndex": 69,
+    "department": "Finance & Administration",
+    "departmentKey": "finance-admin",
+    "localIndex": 4,
+    "name": "Overdue Invoice Detection",
+    "slug": "overdue-invoice-detection",
+    "path": "n8n-workflows/finance-admin/04-overdue-invoice-detection.json"
+  },
+  {
+    "globalIndex": 70,
+    "department": "Finance & Administration",
+    "departmentKey": "finance-admin",
+    "localIndex": 5,
+    "name": "Payment Reminders",
+    "slug": "payment-reminders",
+    "path": "n8n-workflows/finance-admin/05-payment-reminders.json"
+  },
+  {
+    "globalIndex": 71,
+    "department": "Finance & Administration",
+    "departmentKey": "finance-admin",
+    "localIndex": 6,
+    "name": "Refund Request Processing",
+    "slug": "refund-request-processing",
+    "path": "n8n-workflows/finance-admin/06-refund-request-processing.json"
+  },
+  {
+    "globalIndex": 72,
+    "department": "Finance & Administration",
+    "departmentKey": "finance-admin",
+    "localIndex": 7,
+    "name": "Refund Approval Routing",
+    "slug": "refund-approval-routing",
+    "path": "n8n-workflows/finance-admin/07-refund-approval-routing.json"
+  },
+  {
+    "globalIndex": 73,
+    "department": "Finance & Administration",
+    "departmentKey": "finance-admin",
+    "localIndex": 8,
+    "name": "Payment Reconciliation",
+    "slug": "payment-reconciliation",
+    "path": "n8n-workflows/finance-admin/08-payment-reconciliation.json"
+  },
+  {
+    "globalIndex": 74,
+    "department": "Finance & Administration",
+    "departmentKey": "finance-admin",
+    "localIndex": 9,
+    "name": "Expense Capture",
+    "slug": "expense-capture",
+    "path": "n8n-workflows/finance-admin/09-expense-capture.json"
+  },
+  {
+    "globalIndex": 75,
+    "department": "Finance & Administration",
+    "departmentKey": "finance-admin",
+    "localIndex": 10,
+    "name": "Expense Approval",
+    "slug": "expense-approval",
+    "path": "n8n-workflows/finance-admin/10-expense-approval.json"
+  },
+  {
+    "globalIndex": 76,
+    "department": "Finance & Administration",
+    "departmentKey": "finance-admin",
+    "localIndex": 11,
+    "name": "Recurring Billing",
+    "slug": "recurring-billing",
+    "path": "n8n-workflows/finance-admin/11-recurring-billing.json"
+  },
+  {
+    "globalIndex": 77,
+    "department": "Finance & Administration",
+    "departmentKey": "finance-admin",
+    "localIndex": 12,
+    "name": "Credit-Note Generation",
+    "slug": "credit-note-generation",
+    "path": "n8n-workflows/finance-admin/12-credit-note-generation.json"
+  },
+  {
+    "globalIndex": 78,
+    "department": "Finance & Administration",
+    "departmentKey": "finance-admin",
+    "localIndex": 13,
+    "name": "Tax Document Preparation",
+    "slug": "tax-document-preparation",
+    "path": "n8n-workflows/finance-admin/13-tax-document-preparation.json"
+  },
+  {
+    "globalIndex": 79,
+    "department": "Finance & Administration",
+    "departmentKey": "finance-admin",
+    "localIndex": 14,
+    "name": "Contract Renewal",
+    "slug": "contract-renewal",
+    "path": "n8n-workflows/finance-admin/14-contract-renewal.json"
+  },
+  {
+    "globalIndex": 80,
+    "department": "Finance & Administration",
+    "departmentKey": "finance-admin",
+    "localIndex": 15,
+    "name": "Daily Financial Summary",
+    "slug": "daily-financial-summary",
+    "path": "n8n-workflows/finance-admin/15-daily-financial-summary.json"
+  },
+  {
+    "globalIndex": 81,
+    "department": "Data & Intelligence",
+    "departmentKey": "data-intelligence",
+    "localIndex": 1,
+    "name": "Central Event Collection",
+    "slug": "central-event-collection",
+    "path": "n8n-workflows/data-intelligence/01-central-event-collection.json"
+  },
+  {
+    "globalIndex": 82,
+    "department": "Data & Intelligence",
+    "departmentKey": "data-intelligence",
+    "localIndex": 2,
+    "name": "Data Validation",
+    "slug": "data-validation",
+    "path": "n8n-workflows/data-intelligence/02-data-validation.json"
+  },
+  {
+    "globalIndex": 83,
+    "department": "Data & Intelligence",
+    "departmentKey": "data-intelligence",
+    "localIndex": 3,
+    "name": "Duplicate Data Cleanup",
+    "slug": "duplicate-data-cleanup",
+    "path": "n8n-workflows/data-intelligence/03-duplicate-data-cleanup.json"
+  },
+  {
+    "globalIndex": 84,
+    "department": "Data & Intelligence",
+    "departmentKey": "data-intelligence",
+    "localIndex": 4,
+    "name": "Unified Customer Profile",
+    "slug": "unified-customer-profile",
+    "path": "n8n-workflows/data-intelligence/04-unified-customer-profile.json"
+  },
+  {
+    "globalIndex": 85,
+    "department": "Data & Intelligence",
+    "departmentKey": "data-intelligence",
+    "localIndex": 5,
+    "name": "KPI Dashboard Updates",
+    "slug": "kpi-dashboard-updates",
+    "path": "n8n-workflows/data-intelligence/05-kpi-dashboard-updates.json"
+  },
+  {
+    "globalIndex": 86,
+    "department": "Data & Intelligence",
+    "departmentKey": "data-intelligence",
+    "localIndex": 6,
+    "name": "Demand Forecasting",
+    "slug": "demand-forecasting",
+    "path": "n8n-workflows/data-intelligence/06-demand-forecasting.json"
+  },
+  {
+    "globalIndex": 87,
+    "department": "Data & Intelligence",
+    "departmentKey": "data-intelligence",
+    "localIndex": 7,
+    "name": "Anomaly Detection",
+    "slug": "anomaly-detection",
+    "path": "n8n-workflows/data-intelligence/07-anomaly-detection.json"
+  },
+  {
+    "globalIndex": 88,
+    "department": "Data & Intelligence",
+    "departmentKey": "data-intelligence",
+    "localIndex": 8,
+    "name": "Customer Segmentation",
+    "slug": "customer-segmentation",
+    "path": "n8n-workflows/data-intelligence/08-customer-segmentation.json"
+  },
+  {
+    "globalIndex": 89,
+    "department": "Data & Intelligence",
+    "departmentKey": "data-intelligence",
+    "localIndex": 9,
+    "name": "Conversation Trend Analysis",
+    "slug": "conversation-trend-analysis",
+    "path": "n8n-workflows/data-intelligence/09-conversation-trend-analysis.json"
+  },
+  {
+    "globalIndex": 90,
+    "department": "Data & Intelligence",
+    "departmentKey": "data-intelligence",
+    "localIndex": 10,
+    "name": "Executive AI Report",
+    "slug": "executive-ai-report",
+    "path": "n8n-workflows/data-intelligence/10-executive-ai-report.json"
+  },
+  {
+    "globalIndex": 91,
+    "department": "QA, Risk & Governance",
+    "departmentKey": "qa-risk-governance",
+    "localIndex": 1,
+    "name": "AI Confidence Gate",
+    "slug": "ai-confidence-gate",
+    "path": "n8n-workflows/qa-risk-governance/01-ai-confidence-gate.json"
+  },
+  {
+    "globalIndex": 92,
+    "department": "QA, Risk & Governance",
+    "departmentKey": "qa-risk-governance",
+    "localIndex": 2,
+    "name": "Human Approval Control",
+    "slug": "human-approval-control",
+    "path": "n8n-workflows/qa-risk-governance/02-human-approval-control.json"
+  },
+  {
+    "globalIndex": 93,
+    "department": "QA, Risk & Governance",
+    "departmentKey": "qa-risk-governance",
+    "localIndex": 3,
+    "name": "PII Detection & Redaction",
+    "slug": "pii-detection-and-redaction",
+    "path": "n8n-workflows/qa-risk-governance/03-pii-detection-and-redaction.json"
+  },
+  {
+    "globalIndex": 94,
+    "department": "QA, Risk & Governance",
+    "departmentKey": "qa-risk-governance",
+    "localIndex": 4,
+    "name": "Customer Consent Tracking",
+    "slug": "customer-consent-tracking",
+    "path": "n8n-workflows/qa-risk-governance/04-customer-consent-tracking.json"
+  },
+  {
+    "globalIndex": 95,
+    "department": "QA, Risk & Governance",
+    "departmentKey": "qa-risk-governance",
+    "localIndex": 5,
+    "name": "Role-Based Access Control",
+    "slug": "role-based-access-control",
+    "path": "n8n-workflows/qa-risk-governance/05-role-based-access-control.json"
+  },
+  {
+    "globalIndex": 96,
+    "department": "QA, Risk & Governance",
+    "departmentKey": "qa-risk-governance",
+    "localIndex": 6,
+    "name": "Complete Audit Logging",
+    "slug": "complete-audit-logging",
+    "path": "n8n-workflows/qa-risk-governance/06-complete-audit-logging.json"
+  },
+  {
+    "globalIndex": 97,
+    "department": "QA, Risk & Governance",
+    "departmentKey": "qa-risk-governance",
+    "localIndex": 7,
+    "name": "Policy Compliance Check",
+    "slug": "policy-compliance-check",
+    "path": "n8n-workflows/qa-risk-governance/07-policy-compliance-check.json"
+  },
+  {
+    "globalIndex": 98,
+    "department": "QA, Risk & Governance",
+    "departmentKey": "qa-risk-governance",
+    "localIndex": 8,
+    "name": "Fraud & Abuse Detection",
+    "slug": "fraud-and-abuse-detection",
+    "path": "n8n-workflows/qa-risk-governance/08-fraud-and-abuse-detection.json"
+  },
+  {
+    "globalIndex": 99,
+    "department": "QA, Risk & Governance",
+    "departmentKey": "qa-risk-governance",
+    "localIndex": 9,
+    "name": "Interaction Quality Scoring",
+    "slug": "interaction-quality-scoring",
+    "path": "n8n-workflows/qa-risk-governance/09-interaction-quality-scoring.json"
+  },
+  {
+    "globalIndex": 100,
+    "department": "QA, Risk & Governance",
+    "departmentKey": "qa-risk-governance",
+    "localIndex": 10,
+    "name": "Security Incident & Data Retention",
+    "slug": "security-incident-and-data-retention",
+    "path": "n8n-workflows/qa-risk-governance/10-security-incident-and-data-retention.json"
+  }
+]

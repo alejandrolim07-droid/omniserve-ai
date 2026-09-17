@@ -1,100 +1,77 @@
 # OmniServe AI
 
-AI-powered company operations and Customer 360 automation built with n8n, Supabase and OpenAI.
+An open, importable n8n + Supabase operating system for customer support, sales, service delivery, finance, analytics, and governance.
 
-> **Current status:** 1 workflow implemented and tested, 5 additional workflows built pending credential/runtime validation, and 94 planned.
+> **Implementation status:** 100/100 workflow definitions are built. Workflow 001 has been runtime-tested by the project owner; workflows 002-100 require credential attachment and runtime validation in the target n8n instance before production activation.
 
-## What OmniServe does
+## Coverage
 
-OmniServe connects customer operations, sales, service delivery, finance, data intelligence and governance through one shared Customer 360.
+| Department | Workflows | Files |
+|---|---:|---:|
+| Customer Operations | 25 | 25 |
+| Sales & Growth | 20 | 20 |
+| Service Delivery | 20 | 20 |
+| Finance & Administration | 15 | 15 |
+| Data & Intelligence | 10 | 10 |
+| QA, Risk & Governance | 10 | 10 |
+| **Total** | **100** | **100** |
+
+## Operating flow
 
 ```mermaid
-flowchart LR
-    Intake["Customer request"] --> N8N["n8n intake"]
-    N8N --> AI["AI understanding"]
-    AI <--> DB["Supabase Customer 360"]
-    DB --> Department["Department workflow"]
-    Department --> Gate["Automated action or human approval"]
-    Gate --> Response["Customer response"]
-    Response --> Learn["Report and improve"]
+flowchart TD
+  Channels["Voice · Email · Chat · Web · SMS"] --> Intake["n8n workflow intake"]
+  Intake --> Policy["Validate · classify · score risk"]
+  Policy <--> C360["Supabase Customer 360"]
+  Policy --> Gate{"Human approval required?"}
+  Gate -->|No| Action["Department action"]
+  Gate -->|Yes| Approval["Human control"]
+  Approval --> Action
+  Action --> Response["Customer or internal response"]
+  Response --> Audit["Audit · metrics · learning loop"]
+  Audit --> C360
 ```
 
-## Implemented workflow
+Every generated workflow includes a webhook, input normalization, risk/confidence policy, Supabase persistence, three-attempt retry behavior, audit context, and a structured response. High-risk operations create a pending approval request.
 
-### Customer intake and case routing
+## Quick start
 
-`n8n-workflows/customer-operations/01-customer-intake.json`
+1. Run the SQL files in `supabase/` in numeric order.
+2. In n8n, create a **Header Auth** credential named `OmniServe Supabase Service Role`.
+3. Set header name to `apikey` and value to your Supabase secret/service-role key.
+4. Import workflows with `powershell -ExecutionPolicy Bypass -File scripts/import-all.ps1`.
+5. Attach the Supabase credential to each `Persist Event and Audit` HTTP Request node.
+6. Keep workflows inactive until their test execution succeeds.
+7. Run `scripts/smoke-test.ps1` while each selected workflow is listening for a test event.
 
-The workflow:
+Never commit API keys. `.env.example` contains names only.
 
-1. Receives a customer request through an n8n webhook.
-2. Validates the name, email and message.
-3. Routes the case to Sales, Customer Support or Billing.
-4. Assigns Normal, High or Critical priority.
-5. Creates a case number.
-6. Saves the customer, case and audit event in Supabase.
-7. Returns a structured response.
-
-## Repository structure
+## Repository map
 
 ```text
-omniserve-ai/
-├── docs/
-│   ├── architecture.md
-│   └── workflow-catalog.md
-├── n8n-workflows/
-│   └── customer-operations/
-│       └── 01-customer-intake.json
-├── supabase/
-│   ├── 001_customer_360_schema.sql
-│   └── 002_create_customer_case_function.sql
-├── .env.example
-└── README.md
+n8n-workflows/
+  customer-operations/     25 workflows
+  sales-growth/            20 workflows
+  service-delivery/        20 workflows
+  finance-admin/           15 workflows
+  data-intelligence/       10 workflows
+  qa-risk-governance/      10 workflows
+supabase/                  schema, Customer 360, RPCs, approvals, audit
+manifest/workflows.json    machine-readable catalog of all 100 workflows
+scripts/                   validation, import, and smoke testing
+docs/                      architecture, credentials, deployment, catalog
 ```
 
-## Import the workflow into n8n
+## Validation
 
-1. Download the workflow JSON.
-2. In n8n, choose **Import from File**.
-3. Open **Save Case to Supabase**.
-4. Select a Header Auth credential containing your Supabase service-role key.
-5. Run both SQL files in the Supabase SQL Editor.
-6. Test with the n8n test webhook before activation.
-
-## Test with PowerShell
-
-```powershell
-$body = @{
-  name = "Alejandro"
-  email = "test@example.com"
-  message = "My invoice has an incorrect charge and I need help"
-} | ConvertTo-Json
-
-Invoke-RestMethod `
-  -Uri "http://localhost:5678/webhook-test/omniserve-customer-intake" `
-  -Method POST `
-  -ContentType "application/json" `
-  -Body $body
+```bash
+node scripts/validate-workflows.mjs
 ```
 
-## Planned coverage
+The GitHub Actions workflow runs this check on every push and pull request.
 
-- Customer Operations: 25 workflows
-- Sales and Growth: 20 workflows
-- Service Delivery: 20 workflows
-- Finance and Administration: 15 workflows
-- Data and Intelligence: 10 workflows
-- QA, Risk and Governance: 10 workflows
+## Production boundary
 
-See the [complete 100-workflow catalog](docs/workflow-catalog.md), [architecture](docs/architecture.md), and [credential map](docs/credential-map.md).
+The repository is code-complete, not automatically production-approved. Production readiness additionally requires successful executions in the destination n8n instance, valid credentials, channel-specific integrations, alerting, backups, security review, and approval thresholds chosen for the actual company.
 
-## Security
-
-- No API keys or credentials are committed.
-- Keep Supabase service-role credentials inside n8n.
-- Use human approval for financial, security and high-risk actions.
-- Log important system actions to the shared audit trail.
-
-## Technology
-
-n8n · Supabase · PostgreSQL · OpenAI API · Notion · Gmail · Twilio · Slack
+See [workflow catalog](docs/workflow-catalog.md), [architecture](docs/architecture.md), [credential map](docs/credential-map.md), and [deployment checklist](docs/deployment.md).

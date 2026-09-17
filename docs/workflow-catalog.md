@@ -2,18 +2,18 @@
 
 OmniServe is designed as 100 connected automations grouped into six departments. Every workflow should read from or write to the shared Supabase Customer 360 and escalate high-risk decisions to a human.
 
-**Implementation status:** 1 working workflow, 99 planned workflows.
+**Implementation status:** 1 implemented and tested, 5 built pending credential/runtime validation, 94 planned.
 
-Legend: ✅ implemented · 🟡 planned
+Legend: ✅ implemented and tested · 🟠 built, pending validation · 🟡 planned
 
 ## 1. Customer Operations — 25 workflows
 
 1. ✅ Omnichannel Intake
-2. 🟡 Identity Matching
-3. 🟡 Customer 360 Update
-4. 🟡 Intent Classification
-5. 🟡 Priority Scoring
-6. 🟡 Sentiment Detection
+2. 🟠 Identity Matching
+3. 🟠 Customer 360 Update
+4. 🟠 Intent Classification
+5. 🟠 Priority Scoring
+6. 🟠 Sentiment Detection
 7. 🟡 SLA Assignment
 8. 🟡 Case Creation
 9. 🟡 Duplicate Detection

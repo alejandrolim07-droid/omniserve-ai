@@ -1,0 +1,152 @@
+{
+  "name": "OmniServe - AI Intent Classification",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "omniserve-intent-classification",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "intent-01",
+      "name": "Intent Classification Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -700,
+        0
+      ],
+      "webhookId": "omniserve-intent-classification"
+    },
+    {
+      "parameters": {
+        "jsCode": "const input = $json.body ?? $json;\nconst message = String(input.message ?? input.description ?? '').trim();\nif (!message) throw new Error('message is required');\nreturn [{json:{message,context:input.context ?? {},prompt:`Customer message: ${message}\\nContext: ${JSON.stringify(input.context ?? {})}`}}];"
+      },
+      "id": "intent-02",
+      "name": "Prepare Request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -430,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({ model: 'gpt-4.1-mini', temperature: 0, response_format: { type: 'json_object' }, messages: [{ role: 'system', content: 'Classify the customer message for OmniServe. Return only JSON with keys department, intent, confidence, requires_human_review, rationale. department must be SALES, CUSTOMER_SUPPORT, or BILLING. confidence must be 0 to 1.' }, { role: 'user', content: $json.prompt }] }) }}",
+        "options": {}
+      },
+      "id": "intent-03",
+      "name": "Classify Intent with OpenAI",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -150,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Select an OpenAI Authorization Header Auth credential. Never store an API key in this workflow."
+    },
+    {
+      "parameters": {
+        "jsCode": "const raw = $json.choices?.[0]?.message?.content;\nif (!raw) throw new Error('OpenAI returned no classification');\nlet result;\ntry { result = JSON.parse(raw); } catch { throw new Error('OpenAI response was not valid JSON'); }\nreturn [{json:{success:true,...result}}];"
+      },
+      "id": "intent-04",
+      "name": "Parse AI Result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        130,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "intent-05",
+      "name": "Return Result",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        410,
+        0
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Intent Classification Webhook": {
+      "main": [
+        [
+          {
+            "node": "Prepare Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Request": {
+      "main": [
+        [
+          {
+            "node": "Classify Intent with OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify Intent with OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Parse AI Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse AI Result": {
+      "main": [
+        [
+          {
+            "node": "Return Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

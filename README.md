@@ -2,7 +2,7 @@
 
 AI-powered company operations and Customer 360 automation built with n8n, Supabase and OpenAI.
 
-> **Current status:** foundation in progress. The first customer-intake workflow is implemented; the remaining workflows are documented in the 100-workflow roadmap.
+> **Current status:** 1 workflow implemented and tested, 5 additional workflows built pending credential/runtime validation, and 94 planned.
 
 ## What OmniServe does
 
@@ -86,7 +86,7 @@ Invoke-RestMethod `
 - Data and Intelligence: 10 workflows
 - QA, Risk and Governance: 10 workflows
 
-See the [complete 100-workflow catalog](docs/workflow-catalog.md) and [architecture](docs/architecture.md).
+See the [complete 100-workflow catalog](docs/workflow-catalog.md), [architecture](docs/architecture.md), and [credential map](docs/credential-map.md).
 
 ## Security
 

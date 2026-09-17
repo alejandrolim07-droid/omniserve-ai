@@ -1,0 +1,128 @@
+{
+  "name": "OmniServe - Customer 360 Update",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "omniserve-customer-360-update",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "cust360-01",
+      "name": "Customer Update Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -700,
+        0
+      ],
+      "webhookId": "omniserve-customer-360-update"
+    },
+    {
+      "parameters": {
+        "jsCode": "const input = $json.body ?? $json;\nconst fullName = String(input.full_name ?? input.name ?? '').trim();\nconst email = String(input.email ?? '').trim().toLowerCase();\nconst phone = String(input.phone ?? '').trim();\nif (!fullName || !email) throw new Error('full_name and email are required');\nreturn [{json:{full_name:fullName,email,phone:phone || null}}];"
+      },
+      "id": "cust360-02",
+      "name": "Validate Customer",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -400,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://rjudsonxkaohbqhxmvvw.supabase.co/rest/v1/rpc/upsert_customer_profile",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({ p_full_name: $json.full_name, p_email: $json.email, p_phone: $json.phone }) }}",
+        "options": {}
+      },
+      "id": "cust360-03",
+      "name": "Update Customer 360",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -100,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Select the Supabase service-role Header Auth credential."
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { success: true, customer: $json } }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "cust360-04",
+      "name": "Return Customer",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        220,
+        0
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Customer Update Webhook": {
+      "main": [
+        [
+          {
+            "node": "Validate Customer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Customer": {
+      "main": [
+        [
+          {
+            "node": "Update Customer 360",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Customer 360": {
+      "main": [
+        [
+          {
+            "node": "Return Customer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

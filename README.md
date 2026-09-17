@@ -74,4 +74,4 @@ The GitHub Actions workflow runs this check on every push and pull request.
 
 The repository is code-complete, not automatically production-approved. Production readiness additionally requires successful executions in the destination n8n instance, valid credentials, channel-specific integrations, alerting, backups, security review, and approval thresholds chosen for the actual company.
 
-See [workflow catalog](docs/workflow-catalog.md), [architecture](docs/architecture.md), [credential map](docs/credential-map.md), and [deployment checklist](docs/deployment.md).
+See the [purpose and use of all 100 workflows](docs/workflow-purpose-guide.md), [workflow catalog](docs/workflow-catalog.md), [architecture](docs/architecture.md), [credential map](docs/credential-map.md), and [deployment checklist](docs/deployment.md).

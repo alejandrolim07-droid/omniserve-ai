@@ -1,0 +1,128 @@
+{
+  "name": "OmniServe - Identity Matching",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "omniserve-identity-match",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "idmatch-01",
+      "name": "Identity Match Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -700,
+        0
+      ],
+      "webhookId": "omniserve-identity-match"
+    },
+    {
+      "parameters": {
+        "jsCode": "const input = $json.body ?? $json;\nconst email = String(input.email ?? '').trim().toLowerCase();\nconst phone = String(input.phone ?? '').trim();\nif (!email && !phone) throw new Error('email or phone is required');\nreturn [{json:{email:email || null,phone:phone || null}}];"
+      },
+      "id": "idmatch-02",
+      "name": "Validate Identity",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -400,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://rjudsonxkaohbqhxmvvw.supabase.co/rest/v1/rpc/match_customer_identity",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({ p_email: $json.email, p_phone: $json.phone }) }}",
+        "options": {}
+      },
+      "id": "idmatch-03",
+      "name": "Match Customer in Supabase",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -100,
+        0
+      ],
+      "notesInFlow": true,
+      "notes": "Select the Supabase service-role Header Auth credential."
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { success: true, matches: $json } }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "idmatch-04",
+      "name": "Return Match",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        220,
+        0
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Identity Match Webhook": {
+      "main": [
+        [
+          {
+            "node": "Validate Identity",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Identity": {
+      "main": [
+        [
+          {
+            "node": "Match Customer in Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Match Customer in Supabase": {
+      "main": [
+        [
+          {
+            "node": "Return Match",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

@@ -1,0 +1,13 @@
+{
+  "correlationId": "RISK-DEMO-001",
+  "subjectType": "automation_event",
+  "subjectId": "event-demo-001",
+  "proposedAction": "Issue customer refund",
+  "amount": 1500,
+  "riskSignals": [
+    "Amount exceeds automatic approval threshold"
+  ],
+  "confidence": 0.82,
+  "forceHumanReview": true,
+  "expectedResult": "AWAITING_APPROVAL"
+}

@@ -1,0 +1,14 @@
+{
+  "correlationId": "FINANCE-DEMO-001",
+  "subjectType": "invoice",
+  "subjectId": "invoice-demo-001",
+  "customerId": "customer-demo-001",
+  "invoiceNumber": "INV-DEMO-001",
+  "currency": "PHP",
+  "amount": 1500,
+  "reason": "Refund requested for duplicate payment",
+  "transactionReference": "PAY-DEMO-001",
+  "confidence": 0.91,
+  "expectedResult": "AWAITING_APPROVAL"
+}
+

@@ -16,6 +16,13 @@ An open, importable n8n + Supabase operating system for customer support, sales,
 | QA, Risk & Governance | 10 | 10 |
 | **Total** | **100** | **100** |
 
+## Portfolio documentation
+
+- [Full project case study](docs/project-case-study.md): business problem, my role, architecture, implementation decisions, challenges, testing, and honest project status.
+- [Purpose and use of all 100 workflows](docs/workflow-purpose-guide.md): what each automation is designed to do.
+- [Examples for all 100 workflows](docs/workflow-example-index.md): a realistic trigger and expected business outcome for every workflow.
+- [Ready-to-use JSON examples](examples/README.md): fictional department payloads and PowerShell testing instructions.
+
 ## Operating flow
 
 ```mermaid
@@ -74,4 +81,4 @@ The GitHub Actions workflow runs this check on every push and pull request.
 
 The repository is code-complete, not automatically production-approved. Production readiness additionally requires successful executions in the destination n8n instance, valid credentials, channel-specific integrations, alerting, backups, security review, and approval thresholds chosen for the actual company.
 
-See the [purpose and use of all 100 workflows](docs/workflow-purpose-guide.md), [workflow catalog](docs/workflow-catalog.md), [architecture](docs/architecture.md), [credential map](docs/credential-map.md), and [deployment checklist](docs/deployment.md).
+See the [purpose and use of all 100 workflows](docs/workflow-purpose-guide.md), [examples for all 100 workflows](docs/workflow-example-index.md), [project case study](docs/project-case-study.md), [workflow catalog](docs/workflow-catalog.md), [architecture](docs/architecture.md), [credential map](docs/credential-map.md), and [deployment checklist](docs/deployment.md).

@@ -1,0 +1,16 @@
+{
+  "correlationId": "SERVICE-DEMO-001",
+  "subjectType": "service_request",
+  "subjectId": "service-demo-001",
+  "customerId": "customer-demo-001",
+  "serviceType": "CRM automation setup",
+  "requestedDate": "2026-10-05",
+  "location": "Remote",
+  "requirements": [
+    "Connect website lead form",
+    "Create qualification workflow",
+    "Send sales alerts"
+  ],
+  "confidence": 0.93
+}
+

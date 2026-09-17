@@ -1,0 +1,14 @@
+{
+  "correlationId": "LEAD-DEMO-001",
+  "subjectType": "lead",
+  "subjectId": "lead-demo-001",
+  "fullName": "Daniel Cruz",
+  "email": "daniel.cruz@example.com",
+  "company": "Cruz Property Group",
+  "source": "LANDING_PAGE",
+  "budget": 5000,
+  "timeline": "30 days",
+  "need": "Automate real-estate lead qualification and follow-up",
+  "confidence": 0.92
+}
+

@@ -1,0 +1,15 @@
+{
+  "correlationId": "DATA-DEMO-001",
+  "subjectType": "reporting_period",
+  "subjectId": "2026-09-17",
+  "metricSet": "DAILY_OPERATIONS",
+  "metrics": {
+    "newCases": 42,
+    "resolvedCases": 38,
+    "newLeads": 18,
+    "paymentsReceived": 12,
+    "slaCompliance": 0.94
+  },
+  "confidence": 0.98
+}
+

@@ -1,0 +1,13 @@
+{
+  "correlationId": "CASE-DEMO-001",
+  "subjectType": "customer",
+  "subjectId": "customer-demo-001",
+  "customerName": "Maria Santos",
+  "email": "maria.santos@example.com",
+  "channel": "WEB",
+  "confidence": 0.96,
+  "message": "My invoice contains an incorrect charge and I need help.",
+  "expectedDepartment": "BILLING",
+  "expectedPriority": "NORMAL"
+}
+
